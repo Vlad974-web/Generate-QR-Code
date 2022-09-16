@@ -15,8 +15,20 @@ const onGenerateSubmit = (e) => {
 
         setTimeout(() => {
             hideSpinner();
+
+            // AFFICHER LE QR CODE
+            generateQRCode(url, size);
         }, 1000);
     }
+};
+
+// Générer le QR Code
+const generateQRCode = (url, size) => {
+    const qrcode = new QRCode('qrcode' , {
+        text: url,
+        widht: size,
+        height: size
+    });
 };
 
 // MONTRER LE SPINNER QUAND APPUYER SUR LE BOUTTON
