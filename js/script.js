@@ -4,6 +4,8 @@ const qr = document.getElementById('qrcode');
 const onGenerateSubmit = (e) => {
     e.preventDefault();
 
+    clearUI();
+    
     const url = document.getElementById('url').value;
     const size = document.getElementById('size').value;
 
@@ -13,6 +15,7 @@ const onGenerateSubmit = (e) => {
     } else {
         showSpinner();
 
+        // Afficher le spinner pendant une seconde
         setTimeout(() => {
             hideSpinner();
 
@@ -30,6 +33,11 @@ const generateQRCode = (url, size) => {
         height: size
     });
 };
+
+// Effacer le qr code et enregistrer le bouton
+const clearUI = () => {
+    qr.innerHTML = '';
+}
 
 // MONTRER LE SPINNER QUAND APPUYER SUR LE BOUTTON
 const showSpinner = () => {
