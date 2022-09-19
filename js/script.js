@@ -21,6 +21,13 @@ const onGenerateSubmit = (e) => {
 
             // AFFICHER LE QR CODE
             generateQRCode(url, size);
+
+            // L'url de l'image passer en sauvegarde
+            setTimeout(() => {
+                // Créer une variable que l'image sera disponible
+                const saveUrl = qr.querySelector('img').src;
+                createSaveBtn(saveUrl);
+            }, 50);
         }, 1000);
     }
 };
