@@ -39,6 +39,16 @@ const clearUI = () => {
     qr.innerHTML = '';
 }
 
+const createSaveBtn = (saveURL) => {
+    const link = document.createElement('a');
+    link.id = 'save-link';
+    link.classList = 'bg-red-500 hover:bg-red-700 text-white font-bold py-2 rounded w-1/3 m-auto my-5';
+    link.href = saveURL;
+    link.download = 'qrcode';
+    link.innerHTML = 'Save Image';
+    document.getElementById('generated').appendChild(link); //appendChild le déplace de sa position actuelle vers une nouvelle position
+}
+
 // MONTRER LE SPINNER QUAND APPUYER SUR LE BOUTTON
 const showSpinner = () => {
     document.getElementById('spinner').style.display = 'block';
