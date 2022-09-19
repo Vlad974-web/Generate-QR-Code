@@ -44,6 +44,11 @@ const generateQRCode = (url, size) => {
 // Effacer le qr code et enregistrer le bouton
 const clearUI = () => {
     qr.innerHTML = '';
+// Effacer bouton sauvegarder de l'image
+const saveLink = document.getElementById('save-link');
+if (saveLink) {
+    saveLink.remove();
+}
 }
 
 const createSaveBtn = (saveURL) => {
@@ -52,7 +57,7 @@ const createSaveBtn = (saveURL) => {
     link.classList = 'bg-red-500 hover:bg-red-700 text-white font-bold py-2 rounded w-1/3 m-auto my-5';
     link.href = saveURL;
     link.download = 'qrcode';
-    link.innerHTML = 'Save Image';
+    link.innerHTML = 'Télécharger';
     document.getElementById('generated').appendChild(link); //appendChild le déplace de sa position actuelle vers une nouvelle position
 }
 
